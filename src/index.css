@@ -4,4 +4,7 @@
 
 body {
 	margin: 0;
+	font-family: "DM Sans", sans-serif;
+	background-color: #2b1887;
+	padding: 3rem;
 }
