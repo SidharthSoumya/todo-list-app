@@ -1,25 +1,21 @@
 import { categoryList, priorityList } from '../constants'
 import './todo-items.css'
 
-export default function TodoItems(props) {
-    const styles = {
-        textDecoration: 'line-through'
-    }
-
+export default function TodoList({markAsDone, handleOnChange}) {
     const todoList = props.todoList.map(item => (
         <div className="todo-item" key={item.id}>
             <div className="item-header">
                 <h3 className="todo-title">
                     {
                         <div className="input-group">
-                            {!item?.isDone && <input type="checkbox" onChange={(event) => props.markAsDone(event, item.id)} />}
+                            {!item?.isDone && <input type="checkbox" onChange={(event) => markAsDone(event, item.id)} />}
                             <input
                                 type="text"
                                 name="itemName"
                                 disabled={item?.isDone}
-                                style={item?.isDone ? styles : {}}
+                                className={item?.isDone ? 'text-linethrough' : ''}
                                 value={item.itemName}
-                                onChange={($event) => props.handleOnChange($event, item.id)}
+                                onChange={($event) => handleOnChange($event, item.id)}
                                 placeholder="Add note..." />
                         </div>
                     }
@@ -39,7 +35,7 @@ export default function TodoItems(props) {
                         <select
                             disabled={item?.isDone}
                             name="priority"
-                            onChange={(event) => props.handleOnChange(event, item.id)}
+                            onChange={(event) => handleOnChange(event, item.id)}
                             defaultValue={item.priority}
                             className="todo-select">
                             <option value="">--Select--</option>
@@ -57,7 +53,7 @@ export default function TodoItems(props) {
                             disabled={item?.isDone}
                             name="category"
                             defaultValue={item.category}
-                            onChange={($event) => props.handleOnChange($event, item.id)}
+                            onChange={($event) => handleOnChange($event, item.id)}
                             className="todo-select">
                             <option value="">--Select--</option>
                             {

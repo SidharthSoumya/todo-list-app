@@ -76,3 +76,7 @@ select {
     outline: none;
     background-color: transparent;
 }
+
+.text-linethrough {
+	text-decoration: line-through;
+}

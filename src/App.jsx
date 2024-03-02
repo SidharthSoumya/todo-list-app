@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 import './App.css'
-import TodoItem from './components/TodoItems'
+import TodoList from './components/TodoList'
 import { useState } from 'react'
 
 function App() {
@@ -64,7 +64,7 @@ function App() {
 				</div>
 				{
 					todoList.length > 0 ?
-					<TodoItem
+					<TodoList
 						todoList={todoList}
 						markAsDone={markAsDone}
 						handleOnChange={handleOnChange} 
@@ -80,7 +80,7 @@ function App() {
 				</div>
 				{
 					listDone.length > 0 ?
-					<TodoItem todoList={listDone} /> :
+					<TodoList todoList={listDone} /> :
 					<img src="/empty.svg" className="empty-img" alt="Empty Image" />
 				}
 			</div>
