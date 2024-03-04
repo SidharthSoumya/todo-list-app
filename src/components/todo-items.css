@@ -1,0 +1,82 @@
+.todo-item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 110px;
+	border-radius: 12px;
+	background-color: #f4f2ff;
+	padding: 25px;
+}
+
+.todo-item:hover .action-btns {
+	display: flex;
+}
+
+.item-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.action-btns {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+
+}
+
+.btn {
+	background-color: transparent;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.action-icon {
+	width: 24px;
+	height: 24px;
+}
+
+.todo-title {
+	margin: 0;
+	width: 100%;
+}
+
+.item-footer {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+}
+
+.todo-select {
+	margin: 0;
+	color: #2b1887;
+	font-weight: 300;
+}
+
+input[type='text'] {
+    border: none;
+    outline: none;
+    background-color: transparent;
+	width: 80%;
+	font-weight: 400;
+    margin: 0;
+}
+
+.input-group {
+    display: flex;
+    gap: 0.4rem;
+	width: 100%;
+}
+
+select {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.text-linethrough {
+	text-decoration: line-through;
+}
